@@ -1,0 +1,2 @@
+class UserSignsController < ApplicationController
+end
