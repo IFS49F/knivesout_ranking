@@ -3,8 +3,10 @@ import PropTypes from "prop-types"
 import UserSign from "./UserSign.js"
 
 function getList(user_sign_list) {
-  return user_sign_list.map( user_sign =>
-    <UserSign
+  const user_signs = user_sign_list;
+
+  return user_signs.map( user_sign =>
+    <UserSign key={user_sign.id}
       os_name={user_sign.os_name}
       role_name={user_sign.role_name}
       role_id={user_sign.role_id}
