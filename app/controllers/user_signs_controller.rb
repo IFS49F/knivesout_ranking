@@ -10,7 +10,7 @@ class UserSignsController < ApplicationController
   def create
     @user_sign = UserSign.new(allowed_params)
     if @user_sign.save
-      render :index
+      redirect_to action: :index
     else
       render :new
     end
