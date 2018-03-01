@@ -4,16 +4,16 @@ class User extends React.Component {
   render () {
     return (
       <tr>
-        <td> {this.props.role_name} </td>
-        <td> {this.props.top_kill} </td>
-        <td> {this.props.rank_score} </td>
-        <td> {this.props.top_score} </td>
-        <td> {this.props.total_head_shot} </td>
-        <td> {this.props.top1_num} </td>
-        <td> {this.props.total_num} </td>
-        <td> {this.props.die_num} </td>
-        <td> {this.props.top10_num} </td>
-        <td> {this.props.kill_num} </td>
+        <td data-label='roleName'> {this.props.role_name} </td>
+        <td data-label='topKill'> {this.props.top_kill} </td>
+        <td data-label='rankScore'> {this.props.rank_score} </td>
+        <td data-label='topScore'> {this.props.top_score} </td>
+        <td data-label='totalHeadShot'> {this.props.total_head_shot} </td>
+        <td data-label='top1Num'> {this.props.top1_num} </td>
+        <td data-label='totalNum'> {this.props.total_num} </td>
+        <td data-label='dieNum'> {this.props.die_num} </td>
+        <td data-label='top10Num'> {this.props.top10_num} </td>
+        <td data-label='killNum'> {this.props.kill_num} </td>
       </tr>
     );
   }

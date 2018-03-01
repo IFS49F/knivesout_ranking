@@ -5,10 +5,10 @@ class UserSign extends React.Component {
   render () {
     return (
       <tr>
-        <td> {this.props.os_name} </td>
-        <td> {this.props.role_name} </td>
-        <td> {this.props.role_id} </td>
-        <td> {this.props.sign} </td>
+        <td data-label='osName'> {this.props.os_name} </td>
+        <td data-label='roleName'> {this.props.role_name} </td>
+        <td data-label='roleId'> {this.props.role_id} </td>
+        <td data-label='sign'> {this.props.sign} </td>
       </tr>
     );
   }

@@ -22,7 +22,7 @@ class Users extends React.Component {
   render () {
     return (
       <table>
-        <tbody>
+        <thead>
           <tr>
             <th> roleName </th>
             <th> topKill </th>
@@ -35,6 +35,8 @@ class Users extends React.Component {
             <th> top10Num </th>
             <th> killNum </th>
           </tr>
+        </thead>
+        <tbody>
           { getUserList(this.props.users) }
         </tbody>
       </table>
