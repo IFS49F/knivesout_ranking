@@ -19,19 +19,34 @@
   text-align: center;
 }
 
-input {
-  margin-top: 15px;
+input[type="text"] {
+    display: block;
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+    border:2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type="text"]:focus {
+    border-color:#333;
+}
+
+input[type=submit] {
+    padding:10px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
 
 form {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  height: 240px;
-  width: 20%;
+  position: fixed;
+  margin-left: 420px;
+  margin-top: 150px;
+  width: 40%;
 }
 
 body {
