@@ -25,15 +25,15 @@ class Users extends React.Component {
         <thead>
           <tr>
             <th> roleName </th>
+            <th> totalNum </th>
+            <th> top1Num </th>
+            <th> top10Num </th>
+            <th> killNum </th>
+            <th> dieNum </th>
             <th> topKill </th>
             <th> rankScore </th>
             <th> topScore </th>
             <th> totalHeadShot </th>
-            <th> top1Num </th>
-            <th> totalNum </th>
-            <th> dieNum </th>
-            <th> top10Num </th>
-            <th> killNum </th>
           </tr>
         </thead>
         <tbody>
