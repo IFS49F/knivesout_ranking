@@ -1,13 +1,13 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.10.1"
 
-set :application, "git@example.com:me/my_repo.git"
+set :application, "knivesout_ranking"
 set :repo_url, "git@github.com:IFS49F/knivesout_ranking.git"
 
 set :deploy_to, "/var/www/knivesout_ranking"
 
 set :rvm_type, :system
-set :rvm_ruby_version, '2.5.0'
+set :rvm_ruby_version, '2.3.0'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
