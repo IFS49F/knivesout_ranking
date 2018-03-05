@@ -1,1 +1,1 @@
-<img src="images/chiji.png">
+<img src="chiji.png">
