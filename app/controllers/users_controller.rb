@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def index
-    @users = UsersFromNetease.users
+    @users = UsersFromNetease.users.map{|user|user['result']}
   end
 end
