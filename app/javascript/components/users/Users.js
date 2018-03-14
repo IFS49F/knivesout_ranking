@@ -19,25 +19,49 @@ function getUserList(users) {
 }
 
 class Users extends React.Component {
+  constructor(props) {
+    super(props);
+    let originalRows = this.props.users;
+    let rows = originalRows.slice(0);
+    this.state = { originalRows, rows, currentColumn: 'top_kill'}
+    this.handleSortClick = this.handleSortClick.bind(this);
+  };
+
+  handleSortClick = (event) => {
+    let sortKey = event.target.getAttribute('data-column-key')
+    sortKey = sortKey == undefined ? this.state.currentColumn : sortKey
+    let rows = (() => {
+      if (this.state.currentColumn == sortKey) {
+        return this.state.rows.reverse();
+      }
+      else
+      {
+        return  this.state.rows.sort((a,b) => { return (a.result[sortKey] < b.result[sortKey]) ? 1 : -1 });
+      }
+    })();
+
+    this.setState({ rows, currentColumn: sortKey });
+  };
+
   render () {
     return (
       <table>
         <thead>
-          <tr>
-            <th> roleName </th>
-            <th> totalNum </th>
-            <th> top1Num </th>
-            <th> top10Num </th>
-            <th> killNum </th>
-            <th> dieNum </th>
-            <th> topKill </th>
-            <th> rankScore </th>
-            <th> topScore </th>
-            <th> totalHeadShot </th>
+          <tr onClick={this.handleSortClick}>
+            <th data-column-key='role_name'> roleName </th>
+            <th data-column-key='total_num'> totalNum </th>
+            <th data-column-key='top1_num'> top1Num </th>
+            <th data-column-key='top10_num'> top10Num </th>
+            <th data-column-key='kill_num'> killNum </th>
+            <th data-column-key='die_num'> dieNum </th>
+            <th data-column-key='top_kill'> topKill </th>
+            <th data-column-key='rank_score'> rankScore </th>
+            <th data-column-key='top_score'> topScore </th>
+            <th data-column-key='total_head_shot'> totalHeadShot </th>
           </tr>
         </thead>
         <tbody>
-          { getUserList(this.props.users) }
+          { getUserList(this.state.rows) }
         </tbody>
       </table>
     );
