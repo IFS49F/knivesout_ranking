@@ -1,95 +1,45 @@
-import ReactDataGrid from 'react-data-grid'
 import React from "react"
 import PropTypes from "prop-types"
 import User from "./User.js"
 
+function getUserList(users) {
+  return users.map( user =>
+   <User key={user.role_id}
+      role_name={user.result.role_name}
+      top_kill={user.result.top_kill}
+      rank_score={user.result.rank_score}
+      top_score={user.result.top_score}
+      total_head_shot={user.result.total_head_shot}
+      top1_num={user.result.top1_num}
+      total_num={user.result.total_num}
+      die_num={user.result.die_num}
+      top10_num={user.result.top10_num}
+      kill_num={user.result.kill_num} />
+   );
+}
+
 class Users extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-    this._columns = [
-      {
-        key: 'role_name',
-        name: 'RoleName',
-        sortable: true
-      },
-      {
-        key: 'top_kill',
-        name: 'TopKill',
-        sortable: true
-      },
-      {
-        key: 'rank_score',
-        name: 'RankScore',
-        sortable: true
-      },
-      {
-        key: 'total_num',
-        name: 'TotalNum',
-        sortable: true
-      },
-      {
-        key: 'top1_num',
-        name: 'Top1Num',
-        sortable: true
-      },
-      {
-        key: 'top10_num',
-        name: 'Top10Num',
-        sortable: true
-      },
-      {
-        key: 'kill_num',
-        name: 'KillNum',
-        sortable: true
-      },
-      {
-        key: 'die_num',
-        name: 'DieNum',
-        sortable: true
-      },
-      {
-        key: 'top_score',
-        name: 'TopScore',
-        sortable: true
-      },
-      {
-        key: 'total_head_shot',
-        name: 'totalHeadShot',
-        sortable: true
-      }
-    ];
-
-    let originalRows = this.props.users;
-    let rows = originalRows.slice(0);
-    this.state = { originalRows, rows };
-  }
-
-  handleGridSort = (sortColumn, sortDirection) => {
-    const comparer = (a, b) => {
-      if (sortDirection === 'ASC') {
-        return (a[sortColumn] > b[sortColumn]) ? 1 : -1;
-      } else if (sortDirection === 'DESC') {
-        return (a[sortColumn] < b[sortColumn]) ? 1 : -1;
-      }
-    };
-
-    const rows = sortDirection === 'NONE' ? this.state.originalRows.slice(0) : this.state.rows.sort(comparer);
-
-    this.setState({ rows });
-  };
-
-  rowGetter = (i) => {
-    return this.state.rows[i];
-  };
-
   render () {
     return (
-      <ReactDataGrid
-        onGridSort={this.handleGridSort}
-        columns={this._columns}
-        rowGetter={this.rowGetter}
-        rowsCount={this.state.rows.length}
-        minHeight={700} />
+      <table>
+        <thead>
+          <tr>
+            <th> roleName </th>
+            <th> totalNum </th>
+            <th> top1Num </th>
+            <th> top10Num </th>
+            <th> killNum </th>
+            <th> dieNum </th>
+            <th> topKill </th>
+            <th> rankScore </th>
+            <th> topScore </th>
+            <th> totalHeadShot </th>
+          </tr>
+        </thead>
+        <tbody>
+          { getUserList(this.props.users) }
+        </tbody>
+      </table>
     );
   }
 }
