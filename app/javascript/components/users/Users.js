@@ -3,8 +3,11 @@ import PropTypes from "prop-types"
 import User from "./User.js"
 
 function getUserList(users) {
-  return users.map( user =>
+  let total = users.length
+  return users.map( (user, index) =>
    <User key={user.role_id}
+      idx={index}
+      total={total}
       role_name={user.result.role_name}
       top_kill={user.result.top_kill}
       rank_score={user.result.rank_score}

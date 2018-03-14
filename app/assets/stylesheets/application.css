@@ -75,7 +75,7 @@ table th, table td {
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+    /* opacity: 0.1; */
 }
 
 table th {

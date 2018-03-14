@@ -2,8 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 class User extends React.Component {
   render () {
+    let opty = 1 - this.props.idx/this.props.total;
     return (
-      <tr>
+      <tr style={ {opacity:opty} }>
         <td data-label='roleName'> {this.props.role_name} </td>
         <td data-label='totalNum'> {this.props.total_num} </td>
         <td data-label='top1Num'> {this.props.top1_num} </td>
@@ -20,6 +21,8 @@ class User extends React.Component {
 }
 
 User.propTypes = {
+  idx: PropTypes.number,
+  total: PropTypes.number,
   role_name: PropTypes.string,
   top_kill: PropTypes.number,
   rank_score: PropTypes.number,
