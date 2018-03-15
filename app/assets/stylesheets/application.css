@@ -80,7 +80,7 @@ table th {
   letter-spacing: 1px;
 }
 
-tr:nth-child(even) {
+tbody tr:nth-child(n) {
   background-color: #dddddd;
   /* opacity: 0.1; */
 }

@@ -50,7 +50,7 @@ class Users extends React.Component {
     return (
       <table>
         <thead>
-          <tr onClick={this.handleSortClick}>
+          <tr style={ {cursor:'pointer'} } onClick={this.handleSortClick}>
             <th data-column-key='role_name'> roleName </th>
             <th data-column-key='total_num'> totalNum </th>
             <th data-column-key='top1_num'> top1Num </th>
