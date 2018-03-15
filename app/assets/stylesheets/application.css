@@ -74,11 +74,8 @@ table th, table td {
   text-align: center;
 }
 
-tr:nth-child(even) {
-}
-
 table th {
-  // text-transform: uppercase;
+  /* // text-transform: uppercase; */
   font-size: 14px;
   letter-spacing: 1px;
 }
@@ -86,7 +83,6 @@ table th {
 @media screen and (max-width: 1000px) {
 
   table {
-    /* border: 0; */
   }
 
   table thead {
