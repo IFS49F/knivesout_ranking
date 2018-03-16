@@ -1,8 +1,17 @@
-<%= form_for @user_sign, url: {action: "create"}, html: {} do |f| %>
-  os_name: <%= f.text_field :os_name %><br />
-  role_name: <%= f.text_field :role_name %><br />
-  role_id: <%= f.text_field :role_id %><br />
-  sign: <%= f.text_field :sign %><br />
-  <%= f.submit "Create" %>
-<% end %>
+<div id='form-container'>
+  <% @user_sign.errors.messages.each do |key, value| %>
+    <div class="alert alert-danger" role="alert">
+        <%= "(" + key.to_s + ") " + value.first %>
+    </div>
+  <% end %>
 
+  <br />
+
+  <%= form_for @user_sign, url: {action: "create"}, html: {} do |f| %>
+    os_name: <%= f.text_field :os_name %><br />
+    role_name: <%= f.text_field :role_name %><br />
+    role_id: <%= f.text_field :role_id %><br />
+    sign: <%= f.text_field :sign %><br />
+    <%= f.submit "Create" %>
+  <% end %>
+</div>
