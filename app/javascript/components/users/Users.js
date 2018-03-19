@@ -21,16 +21,40 @@ function getUserList(users) {
    );
 }
 
+function setDefaultSort(original_rows, sort_key) {
+  return original_rows.sort((a,b) => { return (a.result[sort_key] < b.result[sort_key]) ? 1 : -1 });
+};
+
+function setColumnStyle(column) {
+  let e = document.querySelector("th[data-column-key=" + column + "]");
+  e.style.color = 'red';
+};
+
+function clearColumnStyle(column) {
+  let e = document.querySelector("th[data-column-key=" + column + "]");
+  e.style.color = '';
+};
+
 class Users extends React.Component {
   constructor(props) {
     super(props);
     let originalRows = this.props.users;
-    let rows = originalRows.slice(0);
-    this.state = { originalRows, rows, currentColumn: 'top_kill'}
+    let defaultSortColumn = "rank_score";
+    let rows = setDefaultSort(originalRows.slice(0), defaultSortColumn);
+    this.state = { originalRows, rows, currentColumn: defaultSortColumn}
     this.handleSortClick = this.handleSortClick.bind(this);
   };
 
+  componentDidMount() {
+    setColumnStyle(this.state.currentColumn);
+  };
+
+  componentDidUpdate() {
+    setColumnStyle(this.state.currentColumn);
+  };
+
   handleSortClick = (event) => {
+    clearColumnStyle(this.state.currentColumn);
     let sortKey = event.target.getAttribute('data-column-key')
     sortKey = sortKey == undefined ? this.state.currentColumn : sortKey
     let rows = (() => {
