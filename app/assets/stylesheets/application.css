@@ -69,6 +69,10 @@ table tr {
   padding: 6px;
 }
 
+thead tr th:hover {
+  background-color:#C0C0C0;
+}
+
 table th, table td {
   padding: 10px;
   text-align: center;

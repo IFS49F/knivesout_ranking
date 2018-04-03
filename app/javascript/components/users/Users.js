@@ -27,7 +27,7 @@ function setDefaultSort(original_rows, sort_key) {
 
 function setColumnStyle(column) {
   let e = document.querySelector("th[data-column-key=" + column + "]");
-  e.style.color = 'red';
+  e.style.color = '#B00000';
 };
 
 function clearColumnStyle(column) {
