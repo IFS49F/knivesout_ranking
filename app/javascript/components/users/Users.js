@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import User from "./User.js"
+import './users.css'
 
 function getUserList(users) {
   let total = users.length

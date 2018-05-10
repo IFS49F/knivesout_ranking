@@ -1,4 +1,6 @@
-<%= react_component("users/Users",  users: @users) %>
+<div id="user_list">
+  <%= react_component("users/Users",  users: @users) %>
+</div>
 
 <div class='btn'>
 <%= link_to "New User", new_user_sign_path %>
