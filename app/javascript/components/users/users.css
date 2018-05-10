@@ -1,7 +1,8 @@
 #user_list {
   width: 80%;
-  background-color: SlateGrey;
+  /* background-color: SlateGrey; */
   margin: auto;
+  margin-top: 100px;
 }
 
 table {
