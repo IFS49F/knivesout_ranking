@@ -46,7 +46,7 @@ input[type="text"]:focus {
 
 input[type=submit] {
     padding:10px 15px;
-    background:#ccc;
+    background:lightblue;
     border:0 none;
     cursor:pointer;
     -webkit-border-radius: 5px;
@@ -54,10 +54,9 @@ input[type=submit] {
 }
 
 #form-container {
-  position: fixed;
-  margin-left: 420px;
+  margin: auto;
   margin-top: 150px;
-  width: 40%;
+  width: 30%;
 }
 
 body {
